@@ -46,11 +46,11 @@ outputs:
         - ninja
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-        - pydantic >=2.4.2                       # [build_platform != target_platform]
-        - pydantic-core >=2.10.1                 # [build_platform != target_platform]
-        - scikit-build-core >=0.6.0              # [build_platform != target_platform]
-        - setuptools >=68.2.2                    # [build_platform != target_platform]
-        - tomli >=2.0.1                          # [build_platform != target_platform]
+        - pydantic >=2.13.4                      # [build_platform != target_platform]
+        - pydantic-core >=2.46.4                 # [build_platform != target_platform]
+        - scikit-build-core >=1.0.3              # [build_platform != target_platform]
+        - setuptools >=83.0.0                    # [build_platform != target_platform]
+        - tomli >=2.4.1                          # [build_platform != target_platform]
       host:
         - nlohmann_json
         # Dynamically linked to libLIEF for now; see comment in patch section.
@@ -59,13 +59,11 @@ outputs:
         - pip
         # Upstream pins build dependencies exactly; we are a bit more lenient
         # here to avoid potential solvability issues.
-        - pydantic >=2.4.2
-        - pydantic-core >=2.10.1
-        - scikit-build-core >=0.6.0
-        - setuptools >=68.2.2
-        # Required for msvc.msvc14_get_vc_env
-        - setuptools <=70.2  # [win]
-        - tomli >=2.0.1
+        - pydantic >=2.13.4
+        - pydantic-core >=2.46.4
+        - scikit-build-core >=1.0.3
+        - setuptools >=83.0.0
+        - tomli >=2.4.1
       run:
         - {{ pin_subpackage('liblief', exact=True) }}
         - python
