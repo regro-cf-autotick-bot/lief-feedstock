@@ -224,6 +224,7 @@ Feedstock Maintainers
 =====================
 
 * [@isuruf](https://github.com/isuruf/)
+* [@jeongseok-meta](https://github.com/jeongseok-meta/)
 * [@mbargull](https://github.com/mbargull/)
 * [@msarahan](https://github.com/msarahan/)
 * [@wolfv](https://github.com/wolfv/)
