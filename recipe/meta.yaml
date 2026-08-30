@@ -27,7 +27,7 @@ requirements:
     - ninja
   host:
     - nlohmann_json
-    - mbedtls 4.*
+    - mbedtls 4.0.0
 
 outputs:
   - name: py-lief
@@ -96,7 +96,7 @@ outputs:
         - ninja
       host:
         - nlohmann_json
-        - mbedtls 4.*
+        - mbedtls 4.0.0
     test:
       files:
         - tests
