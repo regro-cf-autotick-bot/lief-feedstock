@@ -148,6 +148,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - jeongseok-meta
     - isuruf
     - mbargull
     - msarahan
