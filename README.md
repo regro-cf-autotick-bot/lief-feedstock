@@ -1,7 +1,7 @@
 About lief-feedstock
 ====================
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lief-feedstock/blob/main/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lief-feedstock-pr79-feedstock/blob/main/LICENSE.txt)
 
 Home: https://lief.quarkslab.com/
 
@@ -25,8 +25,8 @@ Current build status
 <table><tr>
     <td>GitHub Actions</td>
     <td>
-      <a href="https://github.com/conda-forge/lief-feedstock/actions/workflows/conda-build.yml">
-        <img src="https://github.com/conda-forge/lief-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      <a href="https://github.com/conda-forge/lief-feedstock-pr79-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/lief-feedstock-pr79-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -36,8 +36,8 @@ Current build status
     <td>
       <details>
         <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6372&branchName=main">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lief-feedstock?branchName=main">
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lief-feedstock-pr79-feedstock?branchName=main">
           </a>
         </summary>
         <table>
@@ -45,8 +45,8 @@ Current build status
           <tbody><tr>
               <td>osx_64</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6372&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lief-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lief-feedstock-pr79-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr>
