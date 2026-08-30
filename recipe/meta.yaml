@@ -29,7 +29,7 @@ requirements:
     - fmt
     - nlohmann_json
     - mbedtls 4.0.0
-    - spdlog >=1.17.0
+    - spdlog
 
 outputs:
   - name: py-lief
@@ -69,7 +69,7 @@ outputs:
         - pydantic-core >=2.46.4
         - scikit-build-core >=1.0.3
         - setuptools >=83.0.0
-        - spdlog >=1.17.0
+        - spdlog
         - tomli >=2.4.1
       run:
         - {{ pin_subpackage('liblief', exact=True) }}
@@ -102,7 +102,7 @@ outputs:
         - fmt
         - nlohmann_json
         - mbedtls 4.0.0
-        - spdlog >=1.17.0
+        - spdlog
     test:
       files:
         - tests
