@@ -12,13 +12,15 @@ source:
       - patches/0001-avoid-major-minor-macro-collisions.patch
 
 build:
-  number: 2
+  # pydantic-core skips free-threaded Python 3.14 on these QEMU targets.
+  skip: true  # [is_freethreading and (aarch64 or ppc64le)]
+  number: 3
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - ccache  # [build_platform != 'win-arm64']
+    - ccache
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
@@ -26,11 +28,12 @@ requirements:
     - cmake
     - ninja
   host:
+    - fmt
     - nlohmann_json
-    - spdlog  # [unix]
     # LIEF 1.0.0 requires exactly MbedTLS 4.0.0, which is not available on
     # linux-riscv64. Use LIEF's bundled copy there until a compatible package exists.
     - mbedtls 4.0.0  # [not riscv64]
+    - spdlog
 
 outputs:
   - name: py-lief
@@ -43,7 +46,7 @@ outputs:
         - python
     requirements:
       build:
-        - ccache  # [build_platform != 'win-arm64']
+        - ccache
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
@@ -58,8 +61,8 @@ outputs:
         - setuptools >=83.0.0                    # [build_platform != target_platform]
         - tomli >=2.4.1                          # [build_platform != target_platform]
       host:
+        - fmt
         - nlohmann_json
-        - spdlog  # [unix]
         # Dynamically linked to libLIEF for now; see comment in patch section.
         - {{ pin_subpackage('liblief', exact=True) }}
         - python
@@ -70,6 +73,7 @@ outputs:
         - pydantic-core >=2.46.4
         - scikit-build-core >=1.0.3
         - setuptools >=83.0.0
+        - spdlog
         - tomli >=2.4.1
       run:
         - {{ pin_subpackage('liblief', exact=True) }}
@@ -91,7 +95,7 @@ outputs:
         - {{ pin_subpackage('liblief', max_pin='x.x') }}
     requirements:
       build:
-        - ccache  # [build_platform != 'win-arm64']
+        - ccache
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
@@ -99,9 +103,10 @@ outputs:
         - cmake
         - ninja
       host:
+        - fmt
         - nlohmann_json
-        - spdlog  # [unix]
         - mbedtls 4.0.0  # [not riscv64]
+        - spdlog
     test:
       files:
         - tests
@@ -119,6 +124,14 @@ outputs:
         - ninja || exit 1
         # FIXME: Actual test disabled on Windows for now; LIEF::Parser::parse does not finish on Windows.
         - test-lief-self || exit 1  # [not win]
+        - popd
+
+        - pushd spdlog
+        # Match the Release MSVC runtime used by the packaged LIEF and spdlog
+        # DLLs because set_logger passes a std::shared_ptr across that ABI.
+        - cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Release . || exit 1
+        - ninja || exit 1
+        - test-lief-spdlog || exit 1
         - popd
 
         - pushd macho
