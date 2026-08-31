@@ -125,7 +125,9 @@ outputs:
         - popd
 
         - pushd spdlog
-        - cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug . || exit 1
+        # Match the Release MSVC runtime used by the packaged LIEF and spdlog
+        # DLLs because set_logger passes a std::shared_ptr across that ABI.
+        - cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Release . || exit 1
         - ninja || exit 1
         - test-lief-spdlog || exit 1
         - popd
