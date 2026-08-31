@@ -28,7 +28,9 @@ requirements:
   host:
     - fmt
     - nlohmann_json
-    - mbedtls 4.0.0
+    # LIEF 1.0.0 requires exactly MbedTLS 4.0.0, which is not available on
+    # linux-riscv64. Use LIEF's bundled copy there until a compatible package exists.
+    - mbedtls 4.0.0  # [not riscv64]
     - spdlog
 
 outputs:
@@ -101,7 +103,7 @@ outputs:
       host:
         - fmt
         - nlohmann_json
-        - mbedtls 4.0.0
+        - mbedtls 4.0.0  # [not riscv64]
         - spdlog
     test:
       files:
