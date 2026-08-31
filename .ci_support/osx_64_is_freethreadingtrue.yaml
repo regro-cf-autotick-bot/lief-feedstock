@@ -18,6 +18,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '21'
+fmt:
+- '12.1'
 is_freethreading:
 - true
 macos_machine:
@@ -28,6 +30,8 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.14.* *_cp314t
+spdlog:
+- '1.17'
 target_platform:
 - osx-64
 zip_keys:
