@@ -21,7 +21,6 @@ CMAKE_ARGS="${CMAKE_ARGS} \
   -DLIEF_PY_LIEF_EXT=OFF \
   -DLIEF_PY_LIEF_EXT_SHARED=ON \
   -DLIEF_PYTHON_API=OFF \
-  -DLIEF_EXTERNAL_SPDLOG=ON \
 "
 
 # Please keep this comment around. It may help if this problem reoccurs.
