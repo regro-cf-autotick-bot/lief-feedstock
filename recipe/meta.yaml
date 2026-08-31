@@ -12,6 +12,8 @@ source:
       - patches/0001-avoid-major-minor-macro-collisions.patch
 
 build:
+  # pydantic-core skips free-threaded Python 3.14 on these QEMU targets.
+  skip: true  # [is_freethreading and (aarch64 or ppc64le)]
   number: 2
 
 requirements:
