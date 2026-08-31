@@ -27,6 +27,7 @@ requirements:
     - ninja
   host:
     - nlohmann_json
+    - spdlog  # [unix]
     - mbedtls 4.0.0
 
 outputs:
@@ -56,6 +57,7 @@ outputs:
         - tomli >=2.4.1                          # [build_platform != target_platform]
       host:
         - nlohmann_json
+        - spdlog  # [unix]
         # Dynamically linked to libLIEF for now; see comment in patch section.
         - {{ pin_subpackage('liblief', exact=True) }}
         - python
@@ -96,6 +98,7 @@ outputs:
         - ninja
       host:
         - nlohmann_json
+        - spdlog  # [unix]
         - mbedtls 4.0.0
     test:
       files:
