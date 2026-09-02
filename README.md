@@ -56,6 +56,20 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lief-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_is_freethreadingtrue" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>osx_arm64_is_freethreadingfalse</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6372&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lief-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_is_freethreadingfalse" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_is_freethreadingtrue</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6372&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lief-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_is_freethreadingtrue" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
